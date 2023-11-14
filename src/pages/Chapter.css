@@ -1,0 +1,43 @@
+.chapterTitle {
+    text-align: center;
+  }
+  
+  .chapterContent {
+    text-align: center;
+  }
+  
+  .chapterContent img { 
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto; /* Center images */
+  }
+  
+  .createat {
+    display: block;
+    margin-top: 10px;
+    text-align: center;
+  }
+
+  .no-right-click {
+    pointer-events: none;
+  }
+
+  .judulkomik{
+    color: white;
+    text-decoration: none; 
+  }
+
+  .judulkomik:hover{
+    color: #ffd700;;
+  }
+  
+  @media (max-width: 768px) {
+    .chapterContent{
+        padding: 0 !important;
+    }
+    .chapterContent img {
+      width: 100%; /* Lebar gambar menjadi 100% saat lebar layar kurang dari 768px */
+    }
+  }
+  

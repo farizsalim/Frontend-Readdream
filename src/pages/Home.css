@@ -1,0 +1,148 @@
+/* Home.css */
+
+/* Grid styles */
+.home{
+  min-height: 100vh;
+}
+
+.komikGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 10px;
+}
+
+/* Common card styles */
+.komiklist {
+  background-color: #1a1a1a !important;
+  color: white !important;
+  display: flex !important;
+  flex-direction: column !important;
+  margin: 0 10px 10px 0 !important;
+  height: 360px !important;
+  max-height: 360px !important;
+  position: relative; /* Menambahkan posisi relatif untuk memudahkan styling anak-anak elemen */
+  overflow: hidden; /* Menambahkan overflow: hidden untuk memastikan gambar tetap terpotong */
+}
+
+/* Card styles */
+.card-img-top {
+  height: 30vw !important;
+  max-height: 200px !important;
+  object-fit: cover !important;
+  transition: all 0.3s ease;
+  border-radius: 10px 10px 0 0;
+}
+
+.card-title {
+  text-decoration: none;
+  margin-top: 15px !important;
+  font-size: 18px !important;
+  margin-bottom: 0 !important;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-title:hover{
+  color: #ffd700;
+}
+
+.card-body {
+  flex: 1 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+}
+
+.chapterInfo{
+  color: white;
+  text-decoration: none;
+}
+
+.chapterInfo:hover{
+  color: #ffd700;
+}
+
+.chapterRelease {
+  padding-left: 15px;
+  margin-top: 5px;
+  font-size: 10px;
+}
+
+/* Efek hover */
+.card:hover .card-img-top {
+  transform: scale(1.1); /* Membuat gambar ngezoom tanpa mengubah ukuran */
+  object-fit: cover;
+}
+
+.card:hover {
+  box-shadow: 0 0 20px rgba(128, 0, 128, 0.8); /* Menambahkan bayangan ungu ketika dihover */
+}
+
+/* Additional responsive styles for smaller mobile screens (320px - 425px) */
+@media (max-width: 500px) {
+  .komikGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .komiklist{
+    height: 275px !important;
+    max-height: 275px !important;
+  }
+  
+  .card-img-top {
+    height: 150px !important;
+    max-height: 200px !important;
+    object-fit: cover !important;
+  }
+
+  .card-title {
+    justify-content: center;
+    margin-top: 5px;
+    font-size: 15px !important;
+    line-height: 1.2;
+    margin-bottom: 0; /* Menghapus margin bawah pada layar kecil */
+  }
+  .chapterInfo {
+    font-size: 3vw !important;
+  }
+  .chapterRelease{
+    font-size: 8px;   
+    padding-left: 20px;
+    margin-top: 2px;
+   }
+}
+
+@media (max-width: 350px) {
+  .komikGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .komiklist{
+    height: 275px !important;
+    max-height: 275px !important;
+  }
+  
+  .card-img-top {
+    height: 150px !important;
+    max-height: 200px !important;
+    object-fit: cover !important;
+  }
+
+  .card-title {
+    margin-top: 5px;
+    font-size: 12px !important;
+    line-height: 1.2;
+    margin-bottom: 0; /* Menghapus margin bawah pada layar kecil */
+  }
+  .chapterInfo {
+    font-size: 9px !important;
+    
+  }
+  .chapterRelease{
+    font-size: 8px;   
+    padding-left: 10px;
+    margin-top: 1px;
+   }
+}

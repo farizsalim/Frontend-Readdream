@@ -1,0 +1,61 @@
+/* Set the background color of the navbar */
+.navbar {
+    background-color: #800080 !important; /* Purple color */
+}
+
+/* Set the color and styles of the navbar links */
+.navbar-nav .nav-link {
+    font-size: 18px;
+    font-weight: 600;
+    color: white; /* Text color for links */
+}
+
+.navbar-nav {
+    flex-grow: 1;
+    margin-right: 33%;
+    margin-left: 34%;
+}
+
+/* Navbar links hover effect */
+.navbar-nav .nav-link:hover {
+    color: #ffd700; /* Change the color on hover (you can adjust this to your preference) */
+}
+
+/* Center the logo within the navbar and add zoom effect on hover */
+.navbar-brand {
+    display: flex;
+    align-items: center;
+}
+
+/* Navbar brand hover effect */
+.navbar-brand:hover img {
+    transform: scale(1.2); /* Add a zoom effect on hover to the logo */
+}
+
+/* Set the color of the navbar toggler icon */
+.navbar-toggler-icon {
+    background-color: white;
+    transition: transform 0.3s ease; /* Add transition for smooth effect */
+}
+
+/* Navbar toggler icon hover effect */
+.navbar-toggler:hover .navbar-toggler-icon {
+    transform: scale(1.1); /* Add a zoom effect on hover */
+}
+
+/* Adjust the spacing around the navbar toggler */
+.navbar-toggler {
+    margin-right: 20px; /* Adjust this value based on your preference */
+}
+
+@media (max-width: 500px) {
+    .navbar-brand {
+        display: flex;
+        align-items: center;
+    }
+    .navbar-nav {
+        flex-grow: 1;
+        margin-right: 0;
+        margin-left: 0;
+    }
+}

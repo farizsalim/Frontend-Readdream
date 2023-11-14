@@ -1,0 +1,45 @@
+.judulkomik {
+    text-align: center;
+}
+
+.thumbnail {
+    width: 300px;
+}
+
+.deskripsikomik{
+    padding: 0 50px 30px;
+    background-color: #1a1a1a !important;
+    color: white !important;
+}
+
+.daftarchapter {
+    background-color: #1a1a1a !important;
+    border-radius: 10px;
+    max-height: 500px;
+    height: 300px;
+    overflow-y: auto;
+}
+
+.createatkomik {
+    margin-left: 50px;
+    color: #800080;
+    text-decoration: none;
+}
+
+.chapter{
+    color: white;
+}
+
+.chapter:hover{
+    color: #ffd700;
+}
+
+.link{
+    text-decoration: none;
+}
+
+.urutkan{
+   background-color: #800080 !important;
+   color: white !important;
+   
+}
