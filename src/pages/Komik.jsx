@@ -44,9 +44,7 @@ const Komik = () => {
   if (loading) {
     return (
       <div>
-        {/* Navbar tetap ditampilkan */}
         <Navbar />
-        {/* Loading spinner */}
         <LoadingSpinner />
       </div>
     );
