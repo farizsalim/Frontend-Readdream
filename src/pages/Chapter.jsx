@@ -103,8 +103,8 @@ const Chapter = () => {
         </div>
         <div className='container mt-5'>
           <DisqusComments
-            pageUrl={`${URL}/komik/${id}/chapter/${currentChapterNumber}`}
-            pageIdentifier={`chapter-${id}-${currentChapterNumber}`}
+            pageUrl={`${URL}/komik/${id}/chapter/${nomorChapter}`}
+            pageIdentifier={`chapter-${id}-${nomorChapter}`}
           />
         </div>
       </div>
