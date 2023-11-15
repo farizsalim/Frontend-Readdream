@@ -42,26 +42,22 @@ const DetailChapter = () => {
 
   const handleUpload = async () => {
     if (!selectedFile || !nomorGambar) {
-        setIsValid(false);
-        return;
+      setIsValid(false);
+      return;
     }
 
     try {
-        const formData = new FormData();
-        formData.append('gambar', selectedFile);
-        formData.append('nomorGambar', nomorGambar);
+      const formData = new FormData();
+      formData.append('gambar', selectedFile);
+      formData.append('nomorGambar', nomorGambar);
 
-        await axios.post(`${apiURL}/komik/${id}/chapter/${chapterId}/addGambar`, formData, {
-            withCredentials: true, // Menambahkan opsi withCredentials
-        });
+      await axios.post(`${apiURL}/komik/${id}/chapter/${chapterId}/addGambar`, formData);
 
-        setIsValid(true); // Reset isValid setelah berhasil mengunggah
-        window.location.reload();
+      window.location.reload();
     } catch (error) {
-        console.error('Error uploading image:', error);
-        setIsValid(false);
+      console.error('Error uploading image:', error);
     }
-};
+  };
 
   const handleDeleteGambar = async (gambarId) => {
     try {
