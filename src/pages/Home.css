@@ -36,7 +36,7 @@
 .card-title {
   text-decoration: none;
   margin-top: 15px !important;
-  font-size: 18px !important;
+  font-size: 16px !important;
   margin-bottom: 0 !important;
   line-height: 1;
   display: flex;
@@ -65,7 +65,7 @@
 }
 
 .chapterRelease {
-  padding-left: 15px;
+  padding-left: 20px;
   margin-top: 5px;
   font-size: 10px;
 }

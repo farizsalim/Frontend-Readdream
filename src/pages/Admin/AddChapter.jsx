@@ -1,7 +1,9 @@
-import React, { useState,useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import NavbarAdmin from '../../component/NavbarAdmin';
+import LoadingSpinner from '../../component/LoadingSpinner';
+import Swal from 'sweetalert2';
 
 const AddChapter = () => {
   const { id } = useParams();
@@ -9,8 +11,9 @@ const AddChapter = () => {
     judulChapter: '',
     nomorChapter: '',
   });
+  const [loading, setLoading] = useState(false);
 
-  const apiURL = process.env.REACT_APP_API_URL
+  const apiURL = process.env.REACT_APP_API_URL;
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -22,22 +25,39 @@ const AddChapter = () => {
 
   const handleAddChapter = async () => {
     try {
+      setLoading(true);
       const response = await axios.post(`${apiURL}/komik/${id}/chapter`, chapterData);
       console.log('Chapter added successfully:', response.data);
+      Swal.fire({
+        icon: 'success',
+        title: 'Success',
+        text: 'Chapter berhasil ditambahkan!',
+        willClose: () => {
+          window.location.href = `/admin/DetailKomik/${id}`;
+        },
+      });
     } catch (error) {
       console.error('Error adding chapter:', error);
+      Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'Gagal menambahkan chapter. Silakan coba lagi.',
+      });
+    } finally {
+      setLoading(false);
     }
   };
 
   useEffect(() => {
-    window.scrollTo(0, 0); 
+    window.scrollTo(0, 0);
   }, []);
 
   return (
     <div>
-      <NavbarAdmin/>
+      <NavbarAdmin />
       <div className="container mt-3">
         <h2>Tambah Chapter Baru</h2>
+        {loading && <LoadingSpinner />}
         <form>
           <div className="mb-3">
             <label className="form-label">Judul Chapter</label>
