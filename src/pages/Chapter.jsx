@@ -87,7 +87,7 @@ const Chapter = () => {
           {chapter.daftarGambar && chapter.daftarGambar.map((gambar) => (
             <img
               key={gambar.nomorGambar}
-              src={`${apiPORT}/thumbnail/${gambar.nama}`}
+              src={gambar.gambar}
               alt={`Chapter ${chapter.nomorChapter} - ${gambar.nomorGambar}`}
               className="no-right-click img-fluid"
             />

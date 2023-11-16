@@ -12,7 +12,6 @@ const Komik = () => {
   const [ascending, setAscending] = useState(true);
   const [loading, setLoading] = useState(true); // State untuk loading
   const apiURL = process.env.REACT_APP_API_URL;
-  const apiPORT = process.env.REACT_APP_API_PORT;
 
   useEffect(() => {
     const fetchKomik = async () => {
@@ -60,7 +59,7 @@ const Komik = () => {
             <div className="row">
               <div className="col-md-2">
                 <img
-                  src={`${apiPORT}/thumbnail/${komik.thumbnail}`}
+                  src={komik.thumbnail}
                   alt={komik.judul}
                   className="thumbnail img-fluid rounded"
                 />

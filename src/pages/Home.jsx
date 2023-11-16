@@ -61,7 +61,7 @@ const Home = () => {
                     <div className="position-relative cardPosition">
                       <Link to={`/komik/${komik._id}`}>
                         <img
-                          src={`${apiPORT}/thumbnail/${komik.thumbnail}`}
+                          src={komik.thumbnail}
                           alt={komik.judul}
                           className="card-img-top cardImgTop"
                         />

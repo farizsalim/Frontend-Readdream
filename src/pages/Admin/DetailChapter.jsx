@@ -181,10 +181,10 @@ const DetailChapter = () => {
                         </td>
                         <td>
                           <img
-                            src={`${apiPORT}/public/thumbnail/${gambar.nama}`}
+                            src={gambar.gambar}
                             alt={`Gambar ${index + 1}`}
                             style={{ maxWidth: '100px', maxHeight: '100px', cursor: 'pointer' }}
-                            onClick={() => openModal(`${apiPORT}public/thumbnail/${gambar.nama}`)}
+                            onClick={() => openModal(gambar.gambar)}
                           />
                         </td>
                         <td>

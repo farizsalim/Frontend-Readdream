@@ -10,7 +10,7 @@ const ListKomik = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedGenre, setSelectedGenre] = useState('');
   const apiURL = process.env.REACT_APP_API_URL;
-  const apiPORT = process.env.REACT_APP_API_PORT;
+
   useEffect(() => {
     const fetchKomikList = async () => {
       try {
@@ -23,7 +23,7 @@ const ListKomik = () => {
     };
 
     fetchKomikList();
-  },);
+  }, [apiURL]);
 
   useEffect(() => {
     const filteredByGenre = selectedGenre
@@ -82,13 +82,12 @@ const ListKomik = () => {
               value={selectedGenre}
             >
               <option value="">All Genres</option>
-              {[...new Set(originalKomikList.flatMap(komik => komik.genre))].map((genre, index) => (
-                <option key={index} value={genre}>{genre}</option>
+              {[...new Set(originalKomikList.flatMap(komik => komik.genre))].map((genre) => (
+                <option key={genre} value={genre}>{genre}</option>
               ))}
             </select>
           </div>
           <div className="mb-3 mx-2">
-            {/* Tambah tombol "Tambah Komik" dengan menggunakan Link */}
             <Link to="/admin/tambahKomik" className="btn btn-success">
               Tambah Komik
             </Link>
@@ -109,8 +108,8 @@ const ListKomik = () => {
                     <td>{index + 1}</td>
                     <td>
                       <img
-                        src={`${apiPORT}/thumbnail/${komik.thumbnail}`}
-                        alt={komik.judul}
+                        src={komik.thumbnail}
+                        alt={`Thumbnail for ${komik.judul}`}
                         className="img-fluid"
                       />
                     </td>
