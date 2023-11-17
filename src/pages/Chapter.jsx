@@ -5,7 +5,6 @@ import Navbar from '../component/Navbar';
 import "./Chapter.css";
 import NoRightClick from '../NoRightClick';
 import LoadingSpinner from '../component/LoadingSpinner';
-import Safe from 'react-safe'
 
 const Chapter = () => {
   const { id, nomorChapter } = useParams();
@@ -101,16 +100,16 @@ const Chapter = () => {
           </button>
         </div>
         <div className='container mt-5'>
-          <Safe.script>
-            {
-               (function() { // DON'T EDIT BELOW THIS LINE
-                var d = document, s = d.createElement('script');
-                s.src = Disquss;
-                s.setAttribute('data-timestamp', +new Date());
-                (d.head || d.body).appendChild(s);
-                })()
-            }
-          </Safe.script>
+        <div id="disqus_thread"
+         dangerouslySetInnerHTML={
+          (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document, s = d.createElement('script');
+            s.src = Disquss;
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+            })()
+         }
+        ></div>
         </div>
       </div>
     </div>
