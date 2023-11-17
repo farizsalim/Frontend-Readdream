@@ -4,8 +4,8 @@ import { useParams, useNavigate, Link } from 'react-router-dom';
 import Navbar from '../component/Navbar';
 import "./Chapter.css";
 import NoRightClick from '../NoRightClick';
-import DisqusComments from '../component/DiscussComments';
 import LoadingSpinner from '../component/LoadingSpinner';
+import Safe from 'react-safe'
 
 const Chapter = () => {
   const { id, nomorChapter } = useParams();
@@ -16,8 +16,7 @@ const Chapter = () => {
   const [loading, setLoading] = useState(true); // Tambah state loading
   const navigate = useNavigate();
   const apiURL = process.env.REACT_APP_API_URL;
-  const apiPORT = process.env.REACT_APP_API_PORT;
-  const URL = process.env.REACT_APP_URL;
+  const Disquss = process.env.REACT_APP_DISQUSSURL;
 
   useEffect(() => {
     const fetchChapter = async () => {
@@ -102,10 +101,16 @@ const Chapter = () => {
           </button>
         </div>
         <div className='container mt-5'>
-          <DisqusComments
-            pageUrl={`${URL}/komik/${id}/chapter/${nomorChapter}`}
-            pageIdentifier={`chapter-${id}-${nomorChapter}`}
-          />
+          <Safe.script>
+            {
+               (function() { // DON'T EDIT BELOW THIS LINE
+                var d = document, s = d.createElement('script');
+                s.src = {Disquss};
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+                })()
+            }
+          </Safe.script>
         </div>
       </div>
     </div>
